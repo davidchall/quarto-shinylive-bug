@@ -5,22 +5,40 @@ filters:
   - shinylive
 ---
 
+## App 1
 ```{shinylive-python}
 #| standalone: true
 
 ## file: app.py
-{{< include "app1/app.py" >}}
+from helper import helper1
+from shiny.express import input, render, ui
+
+ui.input_numeric("numeric", "Numeric input", 1, min=1, max=10)
+
+@render.text
+def value():
+    return input.numeric()
 
 ## file: helper.py
-{{< include "app1/helper.py" >}}
+def helper1():
+    return "This is a helper function"
 ```
 
+## App 2
 ```{shinylive-python}
 #| standalone: true
 
 ## file: app.py
-{{< include "app2/app.py" >}}
+from helper import helper2
+from shiny.express import input, render, ui
+
+ui.input_numeric("numeric", "Numeric input", 1, min=1, max=10)
+
+@render.text
+def value():
+    return input.numeric()
 
 ## file: helper.py
-{{< include "app2/helper.py" >}}
+def helper2():
+    return "This is a different helper function"
 ```
