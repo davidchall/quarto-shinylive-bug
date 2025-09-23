@@ -1,0 +1,26 @@
+---
+title: Test
+format: html
+filters:
+  - shinylive
+---
+
+```{shinylive-python}
+#| standalone: true
+
+## file: app.py
+{{< include "app1/app.py" >}}
+
+## file: helper.py
+{{< include "app1/helper.py" >}}
+```
+
+```{shinylive-python}
+#| standalone: true
+
+## file: app.py
+{{< include "app2/app.py" >}}
+
+## file: helper.py
+{{< include "app2/helper.py" >}}
+```
