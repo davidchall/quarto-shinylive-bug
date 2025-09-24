@@ -11,3 +11,13 @@ ImportError: cannot import name 'helper1' from 'helper' (/home/pyodide/app_uwgf7
 The Shiny apps are expected to run independently, each using its own version of `helper.py`. However, due to the naming conflict, they interfere with each other when loaded in the same webpage.
 
 <img width="819" height="390" alt="image" src="https://github.com/user-attachments/assets/633cdfec-0b17-4d54-99f7-ada4d2342fcf" />
+
+## Setup
+
+```bash
+uv sync
+uv run shinylive assets download # v0.10.6
+
+. .venv/bin/activate
+quarto preview test.qmd
+```
